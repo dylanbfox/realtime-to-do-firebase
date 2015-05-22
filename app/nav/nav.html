@@ -1,0 +1,24 @@
+<div id="nav" ng-controller="NavCtrl">
+	<div ng-hide="authData">
+		<form ng-show="authAction === 'register'"; ng-submit="register()" id="register">
+			<input ng-model="newUser.email" type="email" placeholder="email" required>
+			<input ng-model="newUser.password" type="password" placeholder="password" required>
+			<input type="submit" value="register" class="btn btn-primary">
+			<span class="action-toggle"> / <a href ng-click="authAction = 'login'"> login</a></span>
+		</form>
+
+		<form ng-show="authAction === 'login'" ng-submit="login()" id="login">
+			<input ng-model="user.email" type="email" placeholder="email" required>
+			<input ng-model="user.password" type="password" placeholder="password" required>
+			<input type="submit" value="login" class="btn btn-primary">
+			<span class="action-toggle"> / <a href ng-click="authAction = 'register'"> register</a></span>
+		</form>
+	</div>
+
+	<div id="links" ng-show="authData">
+		<a href="#/dashboard">Dashboard</a>
+		<a href="#/">Start List</a>
+	</div>
+
+	<div id="error" ng-show="error">{{ error.code }} :(</div>
+</div>

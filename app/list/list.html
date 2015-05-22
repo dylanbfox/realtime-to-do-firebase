@@ -1,0 +1,34 @@
+<div id="list" class="container">
+	<div id="active-users">
+		<h3><i class="fa fa-bolt"></i> active users</h3>
+		<p class="user" ng-repeat="user in activeUsers">{{ user.username }}</p>
+	</div>
+
+	<h1 id="list-title" ng-show="list.title && !editTitle">{{ list.title }} <span>
+		<span ng-show="list.isPrivate" class="private">PRIVATE</span>
+		<a href ng-click="toggleEditTitle()"><i class="fa fa-edit"></i></a></span>
+		<a href ng-show="isOwner()" ng-click="togglePrivate()"><i class="fa fa-user-secret" title="make private"></i></a></span>
+	</h1>
+
+	<div ng-show="list.editTitleLocked && !editTitle" id="editing-title-tip">
+		<i class="fa fa-warning"></i> someone else is editing this title, editing is locked until they're done.
+	</div>
+	
+	<div ng-show="editTitle">
+		<input ng-model="list.title" type="text" placeholder="List Title">
+		<a href ng-click="toggleEditTitle()">save</a>
+	</div>
+
+	<div id="list-tasks">
+		<ul>
+			<li ng-repeat="task in tasks"><span class="title">{{ task.title }}</span><span class="ops"><a href ng-click="removeTask(task)"><i class="fa fa-remove"></i></a></span></li>
+		</ul>
+	</div>
+
+	<form id="add-task" ng-submit="addTask()">
+		<h3>Add a task</h3>	
+		<textarea type="textarea" ng-model="task.title" required>
+		</textarea>
+		<input type="submit" class="btn btn-success" value="save">
+	</form>
+</div>

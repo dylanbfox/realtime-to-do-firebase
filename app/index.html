@@ -9,15 +9,30 @@
   <title>My AngularJS App</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- Boilerplate -->
   <link rel="stylesheet" href="bower_components/html5-boilerplate/css/normalize.css">
   <link rel="stylesheet" href="bower_components/html5-boilerplate/css/main.css">
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">  
+
+  <!-- Custom App Styles -->
   <link rel="stylesheet" href="app.css">
+  
+  <!-- Misc -->
   <script src="bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
+  <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>  
 </head>
 <body>
   <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
+
+  <div ng-include="'nav/nav.html'"></div>
 
   <div ng-view></div>
 
@@ -25,13 +40,30 @@
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
   -->
   <script src="bower_components/angular/angular.js"></script>
-  <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>  
+
+  <!-- Firebase -->
+  <script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
+  <!-- AngularFire -->
+  <script src="https://cdn.firebase.com/libs/angularfire/1.1.1/angularfire.min.js"></script> 
 
   <!-- Root App -->
   <script src="app.js"></script>
   
   <!-- Home -->
   <script src="home/home.js"></script>
+
+  <!-- List -->
+  <script src="list/list.js"></script>
+
+  <!-- Nav -->
+  <script src="nav/nav.js"></script>
+
+  <!-- Auth -->
+  <script src="auth/auth.js"></script>
+
+  <!-- Dashboard -->
+  <script src="dashboard/dashboard.js"></script>
 
   <!-- Components -->
   <script src="components/version/version.js"></script>

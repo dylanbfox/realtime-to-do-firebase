@@ -1,0 +1,10 @@
+<div id="dashboard" class="container">
+	<h1>Welcome back, {{ userEmail }}</h1>
+	<div class="list" ng-repeat="list in userLists | orderBy: -created">
+		<a href="#/lists/{{ list.$id }}">{{ list.title }}</a>
+		
+		<span ng-show="list.activeUsers" ng-class="{live: list.activeUsers}"><i class="fa fa-circle"></i></span>
+	</div>
+
+	<a style="margin-top:50px;" class="btn btn-warning" href="#/">create a new list!</a>
+</div>
